@@ -9,43 +9,46 @@
                 tools:context=".MainActivity">
 
     <TextView
-        android:text="@string/convert_from_text"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginRight="20dp"
-        android:id="@+id/textView"/>
+        android:text="@string/convert_from_text"
+        android:id="@+id/convert_from_text_view"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="20dp" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:text="1.0"
-        android:id="@+id/amount_text_view"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
-
-    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/amount_text_view"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/convert_from_text_view"
+        android:inputType="numberDecimal"
+        android:text="1.0"/>
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/unit_type_spinner"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/amount_text_view"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
+
+    <!-- You need the min Android version set to 14 in build.gradle -->
     <GridLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:columnCount="2"
-        android:rowCount="6"
-        android:padding="15dp"
-        android:background="#ffc9e8ff"
-        android:orientation="horizontal"
         android:layout_below="@+id/unit_type_spinner"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:columnCount="2"
+        android:rowCount="6"
+        android:orientation="horizontal"
+        android:background="#ffdae6ff"
+        android:padding="15dp">
 
         <TextView
             android:id="@+id/tsp_text_view"
@@ -55,112 +58,88 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left|top"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp" />
 
         <TextView
             android:id="@+id/cup_text_view"
-            android:text="@string/default_cup_value"
+            android:text=".0208 cup"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            />
+            android:layout_gravity="left|top" />
 
         <TextView
             android:id="@+id/tbs_text_view"
-            android:text="@string/default_tbs_value"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text=".3333 tbs"
             android:layout_gravity="left|top"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp" />
 
         <TextView
             android:id="@+id/oz_text_view"
-            android:text="@string/default_oz_value"
+            android:text=".1666 oz"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            />
+            android:layout_gravity="left|top" />
 
         <TextView
             android:id="@+id/kg_text_view"
-            android:text="@string/default_kg_value"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text=".0057 kg"
             android:layout_gravity="left|top"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp" />
 
         <TextView
-            android:id="@+id/qt_text_view"
-            android:text="@string/default_qt_value"
+            android:id="@+id/quart_text_view"
+            android:text=".0052 quart"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            />
+            android:layout_gravity="left|top" />
 
         <TextView
-            android:id="@+id/gal_text_view"
-            android:text="@string/default_gal_value"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/gallon_text_view"
+            android:text=".0013 gallon"
             android:layout_gravity="left|top"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp" />
 
         <TextView
-            android:id="@+id/lb_text_view"
-            android:text="@string/default_lb_value"
+            android:id="@+id/pound_text_view"
+            android:text=".0125 pound"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            />
+            android:layout_gravity="left|top" />
 
         <TextView
             android:id="@+id/ml_text_view"
-            android:text="@string/default_ml_value"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text="4.9289 ml"
             android:layout_gravity="left|top"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp" />
 
         <TextView
-            android:id="@+id/lt_text_view"
-            android:text="@string/default_lt_value"
+            android:id="@+id/liter_text_view"
+            android:text=".0049 liter"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            />
+            android:layout_gravity="left|top" />
 
         <TextView
             android:id="@+id/mg_text_view"
-            android:text="@string/default_mg_value"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text="5687.5000 mg"
             android:layout_gravity="left|top"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="15dp" />
 
         <TextView
             android:id="@+id/pint_text_view"
-            android:text="@string/default_pint_value"
+            android:text=".0104 pint"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            />
+            android:layout_gravity="left|top" />
+
 
     </GridLayout>
+
+    <!-- A Table Layout arranges widgets into rows and columns and is
+    available if you must use Android versions sub 14 -->
 
 </RelativeLayout>
